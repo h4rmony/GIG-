@@ -1,7 +1,7 @@
 package voltaire.medina;
 import java.util.*;
 
-public class driver {
+public class Driver {
 
 	public static void main (String args[]){
 		
@@ -18,12 +18,31 @@ public class driver {
 		
 		userCHOICE = keyboard.nextInt();
 		
+		ArrayList<String> name = new ArrayList<String>();
+		
 		// use a sieve implementation. 
 		// sieve out the database choices until x amount of combinations remain OR 
 		// 		x amount of questions have been asked
 		// if "user says no" {
 		//		SieveAction(1)
 		// }
+		
+
+		
+		
+		
+		
+		// output test 1
+		
+		OutputDB database = new OutputDB();
+		database.populate();
+		
+		System.out.println(database.returnName(0) + " " + database.returnSecondName(0));
+		
+		// output test 1
+		
+		
+		System.exit(0);
 	}
 	
 }
