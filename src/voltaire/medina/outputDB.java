@@ -33,12 +33,38 @@ public class OutputDB {
 			secondName [x] = new NameNode();
 		}
 		
+		// initialize unique nodes
+		for (int x = 0; x < unique.length; x++){
+			unique [x] = new NameNode();
+		}
 		
 		
+		/*
+		 * Genre:
+		 * 1) Shooter 
+		 * 2) Platformer
+		 * 3) Survival
+		 * 4) Adventure
+		 * 
+		 * Genre2:
+		 * 1) Free World
+		 * 2) Arcade
+		 * 
+		 * 
+		 * Mood: 
+		 * 1) Horror
+		 * 2) Apocalyptic/PostApoc
+		 * 
+		 * 
+		 * 
+		 */
 		
 		// add database values
 		name[0].add("Counter Strike", 1);	
 		secondName[0].add("Global Offensive", 1);
+		unique[0].add("Terraria", 2, 1 );
+		unique[1].add("The Last Of Us", 3, 2);
+		unique[2].add("Outlast", 3, 1);
 		
 	}
 	

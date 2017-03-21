@@ -14,7 +14,7 @@ public class Driver {
 		
 		userBOOL = keyboard.nextLine();
 		
-		System.out.println("Take in simple user input, \n press 1 for A\n press 2 for B\n press 3 for C");
+		System.out.println("Take in simple user input, \n press 1 for Post Apocalyptic\n press 2 for Fantasy\n press 3 for Horror");
 		
 		userCHOICE = keyboard.nextInt();
 		
@@ -44,5 +44,10 @@ public class Driver {
 		
 		System.exit(0);
 	}
+
 	
+	
+	/*
+	 * https://www.reference.com/technology/kind-algorithms-used-online-random-name-generators-d0a6d460707fe571#
+	 */
 }
