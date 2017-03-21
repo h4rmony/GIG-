@@ -7,12 +7,7 @@ public class Driver {
 		
 		Scanner keyboard = new Scanner (System.in);
 		
-		String userBOOL; 
 		int userCHOICE;
-		
-		System.out.println("Take in simple user imput, yes | no ");
-		
-		userBOOL = keyboard.nextLine();
 		
 		System.out.println("Take in simple user input, \n press 1 for Post Apocalyptic\n press 2 for Fantasy\n press 3 for Horror");
 		
@@ -28,18 +23,16 @@ public class Driver {
 		// }
 		
 
-		
-		
-		
-		
-		// output test 1
-		
+	
 		OutputDB database = new OutputDB();
 		database.populate();
 		
-		System.out.println(database.returnName(0) + " " + database.returnSecondName(0));
-		
-		// output test 1
+		if (userCHOICE == 1){
+			System.out.println("Picked Genre: Post Apocalyptic");
+			System.out.print("Genre type: ");
+			System.err.println(database.returnGenres());
+
+		}
 		
 		
 		System.exit(0);

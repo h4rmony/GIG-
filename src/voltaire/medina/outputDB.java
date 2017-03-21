@@ -1,10 +1,19 @@
 package voltaire.medina;
 
 import java.lang.*;
+import java.util.Random;
 import java.util.ArrayList;
 
 public class OutputDB {
 
+	// genres
+	String[] genres = new String[10];
+	
+	
+	
+	
+	
+	
 	// main nouns
 	NameNode[] name = new NameNode[10];
 	
@@ -22,6 +31,21 @@ public class OutputDB {
 	
 
 	public void populate(){
+		
+		
+		genres[0] = "Platformer";
+		genres[1] = "Shooter";
+		genres[2] = "BulletHell";
+		genres[3] = "Fighter";
+		genres[4] = "Stealth";
+		genres[5] = "Survival";
+		genres[6] = "Tactical";
+		genres[7] = "Sandbox";
+		
+		
+		
+		
+		
 		
 		// initialize name nodes
 		for (int x = 0; x < name.length; x++){
@@ -74,6 +98,42 @@ public class OutputDB {
 	
 	public String returnSecondName(int index){
 		return secondName[index].name;
+	}
+	
+	public String returnGenres(){
+		
+		int indexCap = genres.length;
+		Random rand = new Random();
+		int randomNum = rand.nextInt(indexCap);
+								
+		String genre1 = genres[randomNum];
+		randomNum = rand.nextInt(indexCap);
+		
+		String genre2 = genres[randomNum];
+		randomNum = rand.nextInt(indexCap);
+		
+		// reroll if matching
+		while (genre1 == genre2){
+			genre2 = genres[randomNum];
+			randomNum = rand.nextInt(indexCap);
+			
+			if (genre1 != genre2){
+				break;
+			}
+		}
+		
+		// reroll if null
+		while (genre1 == null || genre2 == null) {
+			genre1 = genres[randomNum];
+			randomNum = rand.nextInt(indexCap);
+			
+			if (genre1 != null && genre2 != null){
+				break;
+			}
+		}
+		
+		return (genre1 + " - " + genre2);
+		
 	}
 	
 	
