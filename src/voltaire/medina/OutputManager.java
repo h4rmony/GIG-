@@ -4,7 +4,7 @@ import java.lang.*;
 import java.util.Random;
 import java.util.ArrayList;
 
-public class OutputDB {
+public class OutputManager {
 
 	// genres
 	String[] genres = new String[10];
@@ -92,8 +92,37 @@ public class OutputDB {
 		
 	}
 	
-	public String returnName(int index){
-		return name[index].name;
+	
+	// will use Markov chain
+	public String returnName(){
+		
+		String finalName = null;
+		String constanant = "bcdfghjklmnpqrstvwxy";
+		String upperConstanant = "BCDFGHJKLMNPQRSTVWXYZ";
+		String vowel = "auiou";
+		
+		Random rand = new Random();
+
+		int randomC = rand.nextInt(20);
+		int randomC2 = rand.nextInt(20);
+		int randomC3 = rand.nextInt(20);
+		
+		int randomV = rand.nextInt(4);
+		int randomV2 = rand.nextInt(4);
+		int randomV3 = rand.nextInt(4);
+		
+		finalName = (" " + upperConstanant.charAt(randomC) + vowel.charAt(randomV) 
+				 + constanant.charAt(randomC2) + vowel.charAt(randomV2) 
+				 + vowel.charAt(randomV3) + constanant.charAt(randomC3));
+		
+		//char charConst = vowel.charAt(randomC);
+		//char charVowel = vowel.charAt(randomV);
+		
+		//finalName = (" " +charConst + charVowel+ " ");
+		
+		//constanant.
+
+		return finalName;
 	}
 	
 	public String returnSecondName(int index){

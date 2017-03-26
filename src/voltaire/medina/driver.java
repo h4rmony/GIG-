@@ -16,7 +16,7 @@ public class Driver {
 		ArrayList<String> name = new ArrayList<String>();
 		
 		// use a sieve implementation. 
-		// sieve out the database choices until x amount of combinations remain OR 
+		// sieve out the outputManager choices until x amount of combinations remain OR 
 		// 		x amount of questions have been asked
 		// if "user says no" {
 		//		SieveAction(1)
@@ -24,14 +24,20 @@ public class Driver {
 		
 
 	
-		OutputDB database = new OutputDB();
-		database.populate();
+		OutputManager outputManager = new OutputManager(); 
+		outputManager.populate();
 		
 		if (userCHOICE == 1){
 			System.out.println("Picked Genre: Post Apocalyptic");
 			System.out.print("Genre type: ");
-			System.err.println(database.returnGenres());
+			
+			System.out.println(outputManager.returnGenres());
+			
+			System.out.print("Game Name: ");
+			System.out.println(outputManager.returnName());
 
+		} else if (userCHOICE != 1) {
+			System.out.println("Sorry, not yet implemented.");
 		}
 		
 		
