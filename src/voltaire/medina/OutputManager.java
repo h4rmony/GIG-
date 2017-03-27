@@ -97,31 +97,73 @@ public class OutputManager {
 	public String returnName(){
 		
 		String finalName = null;
+		String preName = null;
+		
+		// no x
 		String constanant = "bcdfghjklmnpqrstvwxy";
-		String upperConstanant = "BCDFGHJKLMNPQRSTVWXYZ";
+		
+		// no X
+		String upperConstanant = "BCDFGHJKLMNPQRSTVWYZ";
 		String vowel = "auiou";
+		String[] pstring = new String[10];
+		
+		pstring[0] = "Requiem";
+		pstring[1] = "Destiny";
+		pstring[2] = "Valor";
+		pstring[3] = "Creed";
+		pstring[4] = "Nest";
+		pstring[5] = "World";
+		pstring[6] = "Sign";
+		pstring[7] = "Favor";
+		pstring[8] = "Province";
+		pstring[9] = "Area";
+		
+		String[] uniqueName = new String[10];
+		
+		uniqueName[0] = "David";
+		uniqueName[1] = "Quinn";
+		uniqueName[2] = "Cooper";
+		uniqueName[3] = "Ellie";
+		uniqueName[4] = "Pol";
+		uniqueName[5] = "David";
+		uniqueName[6] = "Ollie";
+		uniqueName[7] = "Kip";
+		uniqueName[8] = "Lee";
+		uniqueName[9] = "Reev";
 		
 		Random rand = new Random();
 
-		int randomC = rand.nextInt(20);
-		int randomC2 = rand.nextInt(20);
-		int randomC3 = rand.nextInt(20);
+		int randomC = rand.nextInt(19);
+		int randomC2 = rand.nextInt(19);
+		int randomC3 = rand.nextInt(19);
 		
 		int randomV = rand.nextInt(4);
 		int randomV2 = rand.nextInt(4);
 		int randomV3 = rand.nextInt(4);
 		
-		finalName = (" " + upperConstanant.charAt(randomC) + vowel.charAt(randomV) 
+		int randomPS = rand.nextInt(10);
+		int randomPN = rand.nextInt(3);
+		int randomPNnum = rand.nextInt(10);
+		
+		if (randomPN == 2) {
+			preName = uniqueName[randomPNnum];
+		} else {
+		preName = (" " + upperConstanant.charAt(randomC) + vowel.charAt(randomV) 
 				 + constanant.charAt(randomC2) + vowel.charAt(randomV2) 
 				 + vowel.charAt(randomV3) + constanant.charAt(randomC3));
+		}
 		
-		//char charConst = vowel.charAt(randomC);
-		//char charVowel = vowel.charAt(randomV);
 		
-		//finalName = (" " +charConst + charVowel+ " ");
-		
-		//constanant.
+		// 50% chance for possessive 
+		int halfChance = rand.nextInt(2);
+		String possessionString;
+		if (halfChance == 0){
+			possessionString = "'s " + pstring[randomPS];
+		} else {
+			possessionString = " ";
+		}
 
+		finalName = preName + possessionString;
 		return finalName;
 	}
 	
