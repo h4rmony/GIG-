@@ -8,11 +8,7 @@ public class OutputManager {
 
 	// genres
 	String[] genres = new String[10];
-	
-	
-	
-	
-	
+	String[] playerNoun = new String[10];
 	
 	// main nouns
 	NameNode[] name = new NameNode[10];
@@ -32,7 +28,6 @@ public class OutputManager {
 
 	public void populate(){
 		
-		
 		genres[0] = "Platformer";
 		genres[1] = "Shooter";
 		genres[2] = "BulletHell";
@@ -41,11 +36,19 @@ public class OutputManager {
 		genres[5] = "Survival";
 		genres[6] = "Tactical";
 		genres[7] = "Sandbox";
+		genres[8] = "Role Playing";
+		genres[9] = "Rouge Like";
 		
-		
-		
-		
-		
+		playerNoun[0] = "adventurer";
+		playerNoun[1] = "exile";
+		playerNoun[2] = "child";
+		playerNoun[3] = "bounty hunter";
+		playerNoun[4] = "unwanted freak";
+		playerNoun[5] = "assassin";
+		playerNoun[6] = "hunter";
+		playerNoun[7] = "mechanic";
+		playerNoun[8] = "shop owner";
+		playerNoun[9] = "kid";
 		
 		// initialize name nodes
 		for (int x = 0; x < name.length; x++){
@@ -61,7 +64,6 @@ public class OutputManager {
 		for (int x = 0; x < unique.length; x++){
 			unique [x] = new NameNode();
 		}
-		
 		
 		/*
 		 * Genre:
@@ -153,7 +155,6 @@ public class OutputManager {
 				 + vowel.charAt(randomV3) + constanant.charAt(randomC3));
 		}
 		
-		
 		// 50% chance for possessive 
 		int halfChance = rand.nextInt(2);
 		String possessionString;
@@ -167,9 +168,34 @@ public class OutputManager {
 		return finalName;
 	}
 	
-	public String returnSecondName(int index){
-		return secondName[index].name;
+	
+	
+	
+	
+	
+	public String returnDescription(){
+		
+		Random rand = new Random();
+		int rand10 = rand.nextInt(10);
+		
+		String firstWord;
+		
+		// if playerNoun is vowel: an
+		if(playerNoun[rand10].charAt(0) == 'a' || playerNoun[rand10].charAt(0) == 'e' ||
+				playerNoun[rand10].charAt(0) == 'i' || playerNoun[rand10].charAt(0) == 'o'
+				|| playerNoun[rand10].charAt(0) == 'u') {
+			firstWord = "An ";
+		} else {
+			firstWord = "A ";
+		}
+		
+		return(firstWord + playerNoun[rand10] + "...");
 	}
+	
+	
+	
+	
+	
 	
 	public String returnGenres(){
 		

@@ -1,5 +1,7 @@
 package voltaire.medina;
 import java.util.*;
+import java.util.Random;
+
 
 public class Driver {
 
@@ -9,7 +11,22 @@ public class Driver {
 		
 		int userCHOICE;
 		
-		System.out.println("Take in simple user input, \n press 1 for Post Apocalyptic\n press 2 for Fantasy\n press 3 for Horror");
+		Random rand = new Random();
+		int rand5 = rand.nextInt(5);
+		
+		if (rand5 == 0){
+			System.out.println("Welcome to GIG, fire away!");
+		} else if (rand5 == 1){
+			System.out.println("GIG is ready to rumble! Are you?");
+		} else if (rand5 == 2){
+			System.out.println("Eenie meenie miney mo, GIG is already ready to go!");
+		} else if (rand5 == 3){
+			System.out.println("Go, go, go you have a game to make!");
+		} else if (rand5 == 4){
+			System.out.println("GIG is waiting for you. Hurry dont make her mad...");
+		}
+		
+		System.out.println("\n press 1 for Post Apocalyptic\n press 2 for Fantasy\n press 3 for Horror");
 		
 		userCHOICE = keyboard.nextInt();
 		
@@ -35,6 +52,9 @@ public class Driver {
 			
 			System.out.print("Game Name: ");
 			System.out.println(outputManager.returnName());
+			
+			System.out.print("Description: ");
+			System.out.println(outputManager.returnDescription());
 
 		} else if (userCHOICE != 1) {
 			System.out.println("Sorry, not yet implemented.");
@@ -44,7 +64,6 @@ public class Driver {
 		System.exit(0);
 	}
 
-	
 	
 	/*
 	 * https://www.reference.com/technology/kind-algorithms-used-online-random-name-generators-d0a6d460707fe571#
