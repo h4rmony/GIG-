@@ -8,7 +8,13 @@ public class OutputManager {
 
 	// genres
 	String[] genres = new String[10];
+	
+	// description arrays
 	String[] playerNoun = new String[10];
+	String[] theToNoun = new String[5];
+	String[] verbAfterNoun = new String[2];
+	String[] descAfterIs = new String[7];
+	String[] descAfterHas = new String[7];
 	
 	// main nouns
 	NameNode[] name = new NameNode[10];
@@ -50,6 +56,31 @@ public class OutputManager {
 		playerNoun[8] = "shop owner";
 		playerNoun[9] = "kid";
 		
+		theToNoun[0] = "Earth";
+		theToNoun[1] = "homeland";
+		theToNoun[2] = "planet";
+		theToNoun[3] = "planetary space hub";
+		theToNoun[4] = "motherland";
+		
+		verbAfterNoun[0] = "has";
+		verbAfterNoun[1] = "is";
+		
+		descAfterIs[0] = "a year from total destruction";
+		descAfterIs[1] = "bombarded with foreign asteriods that seem to be moving";
+		descAfterIs[2] = "being infested by man-eating super bees";
+		descAfterIs[3] = "stripped away from its oxygen";
+		descAfterIs[4] = "flooded with a foreign liquid substance from space";
+		descAfterIs[5] = "overheating from the radiation from an alien source";
+		descAfterIs[6] = "overrun with hatching alien eggs";
+		
+		descAfterHas[0] = "become signted from a nearby alien planet";
+		descAfterHas[1] = "been overtaken by mind-controlled government officials";
+		descAfterHas[2] = "ran out of water, and uprisings have began";
+		descAfterHas[3] = "been struck with a deadly plague. The source is unknown";
+		descAfterHas[4] = "fallen into the hands of the alien race";
+		descAfterHas[5] = "been infested with a slimey toxic foreign substance";
+		descAfterHas[6] = "started to deteriorate because of the unstable atmosphere";
+		
 		// initialize name nodes
 		for (int x = 0; x < name.length; x++){
 			name [x] = new NameNode();
@@ -64,34 +95,7 @@ public class OutputManager {
 		for (int x = 0; x < unique.length; x++){
 			unique [x] = new NameNode();
 		}
-		
-		/*
-		 * Genre:
-		 * 1) Shooter 
-		 * 2) Platformer
-		 * 3) Survival
-		 * 4) Adventure
-		 * 
-		 * Genre2:
-		 * 1) Free World
-		 * 2) Arcade
-		 * 
-		 * 
-		 * Mood: 
-		 * 1) Horror
-		 * 2) Apocalyptic/PostApoc
-		 * 
-		 * 
-		 * 
-		 */
-		
-		// add database values
-		name[0].add("Counter Strike", 1);	
-		secondName[0].add("Global Offensive", 1);
-		unique[0].add("Terraria", 2, 1 );
-		unique[1].add("The Last Of Us", 3, 2);
-		unique[2].add("Outlast", 3, 1);
-		
+
 	}
 	
 	
@@ -176,22 +180,59 @@ public class OutputManager {
 	public String returnDescription(){
 		
 		Random rand = new Random();
-		int rand10 = rand.nextInt(10);
-		
 		String firstWord;
 		
-		// if playerNoun is vowel: an
-		if(playerNoun[rand10].charAt(0) == 'a' || playerNoun[rand10].charAt(0) == 'e' ||
-				playerNoun[rand10].charAt(0) == 'i' || playerNoun[rand10].charAt(0) == 'o'
-				|| playerNoun[rand10].charAt(0) == 'u') {
-			firstWord = "An ";
+		if (rand.nextInt(3) < 2){
+			int rand10 = rand.nextInt(10);
+		
+			// if playerNoun is vowel: an
+			if(playerNoun[rand10].charAt(0) == 'a' || playerNoun[rand10].charAt(0) == 'e' ||
+					playerNoun[rand10].charAt(0) == 'i' || playerNoun[rand10].charAt(0) == 'o'
+					|| playerNoun[rand10].charAt(0) == 'u') {
+				firstWord = "An ";
+			} else {
+				firstWord = "A ";
+			}
+		
+			return(firstWord + playerNoun[rand10] + "...");
 		} else {
-			firstWord = "A ";
+			
+			int randomNumVerbAfter = rand.nextInt(2);
+			
+			if (randomNumVerbAfter == 1){
+				return("The " + theToNoun[rand.nextInt(5)] + " " + verbAfterNoun[randomNumVerbAfter] + " " + descAfterIs[rand.nextInt(7)] + ".");
+			} else {
+				return("The " + theToNoun[rand.nextInt(5)] + " " + verbAfterNoun[randomNumVerbAfter] + " " + descAfterHas[rand.nextInt(7)] + ".");
+			}
 		}
 		
-		return(firstWord + playerNoun[rand10] + "...");
+		
+		
+		/*	Desc. Example:
+		 * 
+		 * An exile finds his/her way through trecherous lands.
+		 * An adverturer trys to escape 
+		 * The Earth has become infested with eggs
+		 * The Earth is a year from mass destruction
+		 * 
+		 * Also at end, do math for how many possible different descriptions/ game names
+		 * 
+		 * This implementation for the description, is a simple yet effective strategy
+		 * 
+		 * 
+		 * "Name" has discovered a new dimention/alternate reality
+		 */
 	}
 	
+	public String postApocResource(){
+		
+		/*	This method will return some random games
+		 * 	or some common notions of a post apocalyptic game 
+		 */
+		
+		String mystring = null;
+		return mystring;
+	}
 	
 	
 	
