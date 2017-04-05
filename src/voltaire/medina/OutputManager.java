@@ -13,8 +13,10 @@ public class OutputManager {
 	String[] playerNoun = new String[10];
 	String[] theToNoun = new String[5];
 	String[] verbAfterNoun = new String[2];
-	String[] descAfterIs = new String[7];
-	String[] descAfterHas = new String[7];
+	String[] descAfterIs = new String[10];
+	String[] descAfterHas = new String[10];
+	String[] verbAfterPnoun = new String[10];
+	String[] descAfterAttacked = new String[10];
 	
 	// main nouns
 	NameNode[] name = new NameNode[10];
@@ -27,9 +29,6 @@ public class OutputManager {
 	
 	// name adjectives
 	NameNode[] adj = new NameNode[10];
-
-	//name[1] = "Counter Strike";
-	//secondName[1] = "Global Offensive";
 	
 
 	public void populate(){
@@ -72,6 +71,9 @@ public class OutputManager {
 		descAfterIs[4] = "flooded with a foreign liquid substance from space";
 		descAfterIs[5] = "overheating from the radiation from an alien source";
 		descAfterIs[6] = "overrun with hatching alien eggs";
+		descAfterIs[7] = "being overtaken by rebels";
+		descAfterIs[8] = "bombarded with hazardous space debris. Chaos everywhere";
+		descAfterIs[9] = "being abandoned. There is no where else to go";
 		
 		descAfterHas[0] = "become signted from a nearby alien planet";
 		descAfterHas[1] = "been overtaken by mind-controlled government officials";
@@ -80,6 +82,31 @@ public class OutputManager {
 		descAfterHas[4] = "fallen into the hands of the alien race";
 		descAfterHas[5] = "been infested with a slimey toxic foreign substance";
 		descAfterHas[6] = "started to deteriorate because of the unstable atmosphere";
+		descAfterHas[7] = "been found by a nearby hostile new discovered species";
+		descAfterHas[8] = "began to crumble. Panic arises";
+		descAfterHas[9] = "been attacked by a new intelligent plant species";
+		
+		verbAfterPnoun[0] = "finds";
+		verbAfterPnoun[1] = "seeks";
+		verbAfterPnoun[2] = "mistakens";
+		verbAfterPnoun[3] = "destroys";
+		verbAfterPnoun[4] = "enters";
+		verbAfterPnoun[5] = "loots";
+		verbAfterPnoun[6] = "discovers";
+		verbAfterPnoun[7] = "breaks";
+		verbAfterPnoun[8] = "escapes";
+		verbAfterPnoun[9] = "acquires";
+		
+		descAfterAttacked[0] = "the infected";
+		descAfterAttacked[1] = "'THEM'";
+		descAfterAttacked[2] = "a neighboring hostile clan";
+		descAfterAttacked[3] = "superior man-eating insects";
+		descAfterAttacked[4] = "creatures that fell from the sky";
+		descAfterAttacked[5] = "a group of scavengers or raiders";
+		descAfterAttacked[6] = "an unknown emerging species";
+		descAfterAttacked[7] = "microscopic parasites";
+		descAfterAttacked[8] = "rabid infected humans";
+		descAfterAttacked[9] = "emerging man-eating intelligent plants";
 		
 		// initialize name nodes
 		for (int x = 0; x < name.length; x++){
@@ -182,7 +209,9 @@ public class OutputManager {
 		Random rand = new Random();
 		String firstWord;
 		
+		
 		if (rand.nextInt(3) < 2){
+			
 			int rand10 = rand.nextInt(10);
 		
 			// if playerNoun is vowel: an
@@ -193,8 +222,14 @@ public class OutputManager {
 			} else {
 				firstWord = "A ";
 			}
-		
-			return(firstWord + playerNoun[rand10] + "...");
+			
+			if (rand.nextInt(5) < 2){
+				return(firstWord + playerNoun[rand10] + " has been attacked by " + descAfterAttacked[rand.nextInt(10)] + ".");
+			} else {
+				return(firstWord + playerNoun[rand10] + " " + verbAfterPnoun[rand.nextInt(10)] + " a" + "...");
+			}
+			
+			
 		} else {
 			
 			int randomNumVerbAfter = rand.nextInt(2);

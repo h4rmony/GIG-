@@ -26,7 +26,7 @@ public class Driver {
 			System.out.println("GIG is waiting for you. Hurry dont make her mad...");
 		}
 		
-		System.out.println("\n press 1 for Post Apocalyptic\n press 2 for Fantasy\n press 3 for Horror");
+		System.out.println("\n press 1 for Post Apocalyptic & Science Fiction \n press 2 for Fantasy\n press 3 for Horror");
 		
 		userCHOICE = keyboard.nextInt();
 		
