@@ -17,6 +17,8 @@ public class OutputManager {
 	String[] descAfterHas = new String[10];
 	String[] verbAfterPnoun = new String[10];
 	String[] descAfterAttacked = new String[10];
+	String[] detailedAdj = new String[10];
+	String[] detailedNoun = new String[10];
 	
 	// main nouns
 	NameNode[] name = new NameNode[10];
@@ -31,7 +33,7 @@ public class OutputManager {
 	NameNode[] adj = new NameNode[10];
 	
 
-	public void populate(){
+	public void populatePostApoc(){
 		
 		genres[0] = "Platformer";
 		genres[1] = "Shooter";
@@ -88,14 +90,14 @@ public class OutputManager {
 		
 		verbAfterPnoun[0] = "finds";
 		verbAfterPnoun[1] = "seeks";
-		verbAfterPnoun[2] = "mistakens";
+		verbAfterPnoun[2] = "infiltrates";
 		verbAfterPnoun[3] = "destroys";
 		verbAfterPnoun[4] = "enters";
 		verbAfterPnoun[5] = "loots";
 		verbAfterPnoun[6] = "discovers";
 		verbAfterPnoun[7] = "breaks";
 		verbAfterPnoun[8] = "escapes";
-		verbAfterPnoun[9] = "acquires";
+		verbAfterPnoun[9] = "adventures";
 		
 		descAfterAttacked[0] = "the infected";
 		descAfterAttacked[1] = "'THEM'";
@@ -107,6 +109,29 @@ public class OutputManager {
 		descAfterAttacked[7] = "microscopic parasites";
 		descAfterAttacked[8] = "rabid infected humans";
 		descAfterAttacked[9] = "emerging man-eating intelligent plants";
+		
+		detailedAdj[0] = "dangerous";
+		detailedAdj[1] = "blood stained";
+		detailedAdj[2] = "ice frosted";
+		detailedAdj[3] = "infected";
+		detailedAdj[4] = "diseased";
+		detailedAdj[5] = "zombie populated";
+		detailedAdj[6] = "zombie stricken";
+		detailedAdj[7] = "";
+		detailedAdj[8] = "hostile";
+		detailedAdj[9] = "malicious";
+		
+		detailedNoun[0] = "peculiar crashsite";
+		detailedNoun[1] = "abandoned house";
+		detailedNoun[2] = "mental institution";
+		detailedNoun[3] = "research facility"; 
+		detailedNoun[4] = "laboratory";
+		detailedNoun[5] = "military base";
+		detailedNoun[6] = "close relative's hideout";
+		detailedNoun[7] = "close friend's hideout";
+		detailedNoun[8] = "hideout full of bandits";
+		detailedNoun[9] = "neighboring clan";
+		
 		
 		// initialize name nodes
 		for (int x = 0; x < name.length; x++){
@@ -226,7 +251,8 @@ public class OutputManager {
 			if (rand.nextInt(5) < 2){
 				return(firstWord + playerNoun[rand10] + " has been attacked by " + descAfterAttacked[rand.nextInt(10)] + ".");
 			} else {
-				return(firstWord + playerNoun[rand10] + " " + verbAfterPnoun[rand.nextInt(10)] + " a" + "...");
+				return(firstWord + playerNoun[rand10] + " " + verbAfterPnoun[rand.nextInt(10)] + " a " + detailedAdj[rand.nextInt(10)] +
+						" " + detailedNoun[rand.nextInt(10)] + ".");
 			}
 			
 			

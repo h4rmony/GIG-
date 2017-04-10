@@ -42,10 +42,13 @@ public class Driver {
 
 	
 		OutputManager outputManager = new OutputManager(); 
-		outputManager.populate();
+
 		
 		if (userCHOICE == 1){
-			System.out.println("Picked Genre: Post Apocalyptic");
+			
+			outputManager.populatePostApoc();
+			
+			System.out.println("Picked Genre: Post Apocalyptic & Science Fiction");
 			System.out.print("Genre type: ");
 			
 			System.out.println(outputManager.returnGenres());
