@@ -54,12 +54,42 @@ public class Driver {
 			System.out.println(outputManager.returnGenres());
 			
 			System.out.print("Game Name: ");
-			System.out.println(outputManager.returnName());
+			System.out.println(outputManager.returnNamePostApoc());
 			
 			System.out.print("Description: ");
 			System.out.println(outputManager.returnDescription());
 
-		} else if (userCHOICE != 1) {
+		} else if (userCHOICE == 2) {
+			
+			outputManager.populateFantasy();
+			
+			System.out.println("Picked Genre: Fantasy");
+			System.out.print("Genre type: ");
+			
+			System.out.println(outputManager.returnGenres());
+			
+			System.out.print("Game Name: ");
+			System.out.println(outputManager.returnNameFantasy());
+			
+			System.out.print("Description: ");
+			System.out.println(outputManager.returnDescription());
+
+		} else if (userCHOICE == 3) {
+			
+			outputManager.populateHorror();
+			
+			System.out.println("Picked Genre: Horror");
+			System.out.print("Genre type: ");
+			
+			System.out.println(outputManager.returnGenres());
+			
+			System.out.print("Game Name: ");
+			System.out.println(outputManager.returnNameHorror());
+			
+			System.out.print("Description: ");
+			System.out.println(outputManager.returnDescription());
+			
+		} else {
 			System.out.println("Sorry, not yet implemented.");
 		}
 		
