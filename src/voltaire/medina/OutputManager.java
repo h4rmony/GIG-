@@ -572,7 +572,7 @@ public void populateHorror(){
 				firstWord = "A ";
 			}
 			
-			if (rand.nextInt(5) < 2){
+			if (rand.nextInt(5) < 1){
 				return(firstWord + playerNoun[rand10] + " has been attacked by " + descAfterAttacked[rand.nextInt(10)] + ".");
 			} else {
 				return(firstWord + playerNoun[rand10] + " " + verbAfterPnoun[rand.nextInt(10)] + " a " + detailedAdj[rand.nextInt(10)] +
